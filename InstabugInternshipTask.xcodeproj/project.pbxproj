@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E98262D7C10007D38E8 /* AppDelegate.swift */; };
+		B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */; };
+		B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9C262D7C10007D38E8 /* ViewController.swift */; };
+		B47E3EA0262D7C10007D38E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47E3E9E262D7C10007D38E8 /* Main.storyboard */; };
+		B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47E3EA1262D7C11007D38E8 /* Assets.xcassets */; };
+		B47E3EA5262D7C11007D38E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */; };
+		B47E3EDB262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */; };
+		B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */; };
+		B47E3EE4262D7C66007D38E8 /* InstabugLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B47E3EE7262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */; };
+		B47E3EE8262D7C66007D38E8 /* InstabugLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B47E3EF3262D7C7C007D38E8 /* InstabugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B47E3EDC262D7C66007D38E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B47E3E8D262D7C10007D38E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B47E3ED1262D7C66007D38E8;
+			remoteInfo = InstabugLogger;
+		};
+		B47E3EDE262D7C66007D38E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B47E3E8D262D7C10007D38E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B47E3E94262D7C10007D38E8;
+			remoteInfo = InstabugInternshipTask;
+		};
+		B47E3EE5262D7C66007D38E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B47E3E8D262D7C10007D38E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B47E3ED1262D7C66007D38E8;
+			remoteInfo = InstabugLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B47E3EEC262D7C66007D38E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B47E3EE8262D7C66007D38E8 /* InstabugLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstabugInternshipTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47E3E98262D7C10007D38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B47E3E9C262D7C10007D38E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B47E3E9F262D7C10007D38E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B47E3EA1262D7C11007D38E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B47E3EA4262D7C11007D38E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B47E3EA6262D7C11007D38E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstabugLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstabugLogger.h; sourceTree = "<group>"; };
+		B47E3ED5262D7C66007D38E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47E3EDA262D7C66007D38E8 /* InstabugLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstabugLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstabugLoggerTests.swift; sourceTree = "<group>"; };
+		B47E3EE3262D7C66007D38E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstabugLogger.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B47E3E92262D7C10007D38E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3EE7262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47E3ECF262D7C66007D38E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47E3ED7262D7C66007D38E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3EDB262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B47E3E8C262D7C10007D38E8 = {
+			isa = PBXGroup;
+			children = (
+				B47E3E97262D7C10007D38E8 /* InstabugInternshipTask */,
+				B47E3ED3262D7C66007D38E8 /* InstabugLogger */,
+				B47E3EE0262D7C66007D38E8 /* InstabugLoggerTests */,
+				B47E3E96262D7C10007D38E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B47E3E96262D7C10007D38E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */,
+				B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */,
+				B47E3EDA262D7C66007D38E8 /* InstabugLoggerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B47E3E97262D7C10007D38E8 /* InstabugInternshipTask */ = {
+			isa = PBXGroup;
+			children = (
+				B47E3E98262D7C10007D38E8 /* AppDelegate.swift */,
+				B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */,
+				B47E3E9C262D7C10007D38E8 /* ViewController.swift */,
+				B47E3E9E262D7C10007D38E8 /* Main.storyboard */,
+				B47E3EA1262D7C11007D38E8 /* Assets.xcassets */,
+				B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */,
+				B47E3EA6262D7C11007D38E8 /* Info.plist */,
+			);
+			path = InstabugInternshipTask;
+			sourceTree = "<group>";
+		};
+		B47E3ED3262D7C66007D38E8 /* InstabugLogger */ = {
+			isa = PBXGroup;
+			children = (
+				B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */,
+				B47E3ED5262D7C66007D38E8 /* Info.plist */,
+				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
+			);
+			path = InstabugLogger;
+			sourceTree = "<group>";
+		};
+		B47E3EE0262D7C66007D38E8 /* InstabugLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */,
+				B47E3EE3262D7C66007D38E8 /* Info.plist */,
+			);
+			path = InstabugLoggerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B47E3ECD262D7C66007D38E8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3EE4262D7C66007D38E8 /* InstabugLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B47E3E94262D7C10007D38E8 /* InstabugInternshipTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B47E3EBF262D7C11007D38E8 /* Build configuration list for PBXNativeTarget "InstabugInternshipTask" */;
+			buildPhases = (
+				B47E3E91262D7C10007D38E8 /* Sources */,
+				B47E3E92262D7C10007D38E8 /* Frameworks */,
+				B47E3E93262D7C10007D38E8 /* Resources */,
+				B47E3EEC262D7C66007D38E8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B47E3EE6262D7C66007D38E8 /* PBXTargetDependency */,
+			);
+			name = InstabugInternshipTask;
+			productName = InstabugInternshipTask;
+			productReference = B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B47E3ED1262D7C66007D38E8 /* InstabugLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B47E3EE9262D7C66007D38E8 /* Build configuration list for PBXNativeTarget "InstabugLogger" */;
+			buildPhases = (
+				B47E3ECD262D7C66007D38E8 /* Headers */,
+				B47E3ECE262D7C66007D38E8 /* Sources */,
+				B47E3ECF262D7C66007D38E8 /* Frameworks */,
+				B47E3ED0262D7C66007D38E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InstabugLogger;
+			productName = InstabugLogger;
+			productReference = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B47E3ED9262D7C66007D38E8 /* InstabugLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B47E3EED262D7C66007D38E8 /* Build configuration list for PBXNativeTarget "InstabugLoggerTests" */;
+			buildPhases = (
+				B47E3ED6262D7C66007D38E8 /* Sources */,
+				B47E3ED7262D7C66007D38E8 /* Frameworks */,
+				B47E3ED8262D7C66007D38E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B47E3EDD262D7C66007D38E8 /* PBXTargetDependency */,
+				B47E3EDF262D7C66007D38E8 /* PBXTargetDependency */,
+			);
+			name = InstabugLoggerTests;
+			productName = InstabugLoggerTests;
+			productReference = B47E3EDA262D7C66007D38E8 /* InstabugLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B47E3E8D262D7C10007D38E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					B47E3E94262D7C10007D38E8 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					B47E3ED1262D7C66007D38E8 = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
+					B47E3ED9262D7C66007D38E8 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = B47E3E94262D7C10007D38E8;
+					};
+				};
+			};
+			buildConfigurationList = B47E3E90262D7C10007D38E8 /* Build configuration list for PBXProject "InstabugInternshipTask" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B47E3E8C262D7C10007D38E8;
+			productRefGroup = B47E3E96262D7C10007D38E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B47E3E94262D7C10007D38E8 /* InstabugInternshipTask */,
+				B47E3ED1262D7C66007D38E8 /* InstabugLogger */,
+				B47E3ED9262D7C66007D38E8 /* InstabugLoggerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B47E3E93262D7C10007D38E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3EA5262D7C11007D38E8 /* LaunchScreen.storyboard in Resources */,
+				B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */,
+				B47E3EA0262D7C10007D38E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47E3ED0262D7C66007D38E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47E3ED8262D7C66007D38E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B47E3E91262D7C10007D38E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */,
+				B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */,
+				B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47E3ECE262D7C66007D38E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3EF3262D7C7C007D38E8 /* InstabugLogger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47E3ED6262D7C66007D38E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B47E3EDD262D7C66007D38E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B47E3ED1262D7C66007D38E8 /* InstabugLogger */;
+			targetProxy = B47E3EDC262D7C66007D38E8 /* PBXContainerItemProxy */;
+		};
+		B47E3EDF262D7C66007D38E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B47E3E94262D7C10007D38E8 /* InstabugInternshipTask */;
+			targetProxy = B47E3EDE262D7C66007D38E8 /* PBXContainerItemProxy */;
+		};
+		B47E3EE6262D7C66007D38E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B47E3ED1262D7C66007D38E8 /* InstabugLogger */;
+			targetProxy = B47E3EE5262D7C66007D38E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B47E3E9E262D7C10007D38E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B47E3E9F262D7C10007D38E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B47E3EA4262D7C11007D38E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B47E3EBD262D7C11007D38E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B47E3EBE262D7C11007D38E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B47E3EC0262D7C11007D38E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InstabugInternshipTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Instabug.InstabugInternshipTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B47E3EC1262D7C11007D38E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InstabugInternshipTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Instabug.InstabugInternshipTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B47E3EEA262D7C66007D38E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = InstabugLogger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Instabug.InstabugLogger;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B47E3EEB262D7C66007D38E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = InstabugLogger/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Instabug.InstabugLogger;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B47E3EEE262D7C66007D38E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InstabugLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Instabug.InstabugLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstabugInternshipTask.app/InstabugInternshipTask";
+			};
+			name = Debug;
+		};
+		B47E3EEF262D7C66007D38E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InstabugLoggerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Instabug.InstabugLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstabugInternshipTask.app/InstabugInternshipTask";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B47E3E90262D7C10007D38E8 /* Build configuration list for PBXProject "InstabugInternshipTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47E3EBD262D7C11007D38E8 /* Debug */,
+				B47E3EBE262D7C11007D38E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B47E3EBF262D7C11007D38E8 /* Build configuration list for PBXNativeTarget "InstabugInternshipTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47E3EC0262D7C11007D38E8 /* Debug */,
+				B47E3EC1262D7C11007D38E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B47E3EE9262D7C66007D38E8 /* Build configuration list for PBXNativeTarget "InstabugLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47E3EEA262D7C66007D38E8 /* Debug */,
+				B47E3EEB262D7C66007D38E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B47E3EED262D7C66007D38E8 /* Build configuration list for PBXNativeTarget "InstabugLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47E3EEE262D7C66007D38E8 /* Debug */,
+				B47E3EEF262D7C66007D38E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B47E3E8D262D7C10007D38E8 /* Project object */;
+}

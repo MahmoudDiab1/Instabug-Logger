@@ -32,7 +32,7 @@ public enum LogLevel : String {
     case Informational = "Informational"
 }
 
-//MARK: Adapt user LogInput to a formated Log model. -
+//MARK: Adapt user LogInput to a formatted Log model. -
 protocol LogTarget {
     var level: String {get}
     var message: String {get}
@@ -61,17 +61,14 @@ extension LogAdapter : LogTarget{
         return Date()
     }
     
-    /// If log message is longer than 1000 character, truncate at 1000 and add ... at the end.
+    
     private func validateMessage(msg:String)->String {
         let validMessage = msg.count > 1000 ? String(msg.prefix(1000)).appending("...") : msg
         return validMessage
     }
-    // convert current log (injected in initializer) to an initialized LogEntity model.
-    func adapt (dataController:DataController) {
-            let logItem = Log(level: self.level, message: self.message, timeStamp: self.timeStamp)
-            let log = LogEntity(context:dataController.viewContext)
-            log.message = logItem.message
-            log.level = logItem.level
-            log.timeStamp = logItem.timeStamp 
+    
+    func adapt () ->Log {
+          let logItem = Log(level: self.level, message: self.message, timeStamp: self.timeStamp)
+          return logItem
     }
 }

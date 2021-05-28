@@ -13,8 +13,8 @@ public class InstabugLogger  {
     public static var shared : InstabugLogger = InstabugLogger()
     
     private var storageType:StorageType? 
-    lazy var storageService : StorageHandler = {
-        let service = StorageEngine(storageType: storageType ?? .coreData)
+    lazy  var storageService : StorageHandler = {
+        let service = StorageEngine(storageType: storageType ?? .coreData(limit: 1000))
         return service
     }()
  
@@ -24,19 +24,23 @@ public class InstabugLogger  {
         storageService.configure() // Based on storage type e.g. CoreData.
     }
     
-    // MARK: Logging -
-    /// The logging framework should accept a log message and level.
+    // MARK: Logging - 
     public func log (_ level: LogLevel, message: String) {
         storageService.log(level, message: message)
     }
     
-    // MARK: Fetch logs -
-    public func fetchAllLogs() -> [Log] {
+    // MARK: Fetch logs  -
+    public func fetchAllLogs() ->  [Log]  {
         let logs =  storageService.fetchAllLogs()
         return logs
     }
     
     public func fetchAllLogs(completionHandler:@escaping( ([Log])->Void)) {
-        storageService.fetchAllLogs(completionHandler: completionHandler)
+        storageService.fetchAllLogs(completionHandler: completionHandler) 
+    }
+    
+    public func fetchAllLogsFormatted () -> [String] { 
+        let logs =  storageService.fetchAllLogsFormatted()
+        return logs
     }
 }

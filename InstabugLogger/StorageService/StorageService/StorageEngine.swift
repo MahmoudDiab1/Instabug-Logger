@@ -7,29 +7,31 @@
 
 import Foundation
 
-/// Abstract storage operations handled by StorageEngine
 protocol StorageHandler {
     func configure()
     func log(_ level: LogLevel, message: String)
     func fetchAllLogs() -> [Log]
     func fetchAllLogs(completionHandler: @escaping (([Log]) -> Void))
+    func fetchAllLogsFormatted () ->[String]
 }
-
-/// Store logs on disk e.g. CoreData.
+ 
 // (todo): Add different storage options.
 public enum StorageType {
-    case coreData
+    case coreData (limit:Int)
 }
+
 extension StorageType {
     var engine:StorageHandler {
         switch self {
-        case .coreData:
-            return CoreDataEngine()
+        case .coreData(let limit):
+            let dataController = DataController(modelName: "LogModel")
+            return CoreDataEngine(limit: limit, dataController: dataController)
         }
     }
 }
 
 class StorageEngine : StorageHandler {
+    
     private var storageEngine:StorageHandler
     
     init(storageType:StorageType) {
@@ -44,12 +46,15 @@ class StorageEngine : StorageHandler {
         storageEngine.log(level , message: message)
     }
     
-    func fetchAllLogs() -> [Log] {
+    func fetchAllLogs() -> [Log]    {
         return  storageEngine.fetchAllLogs() 
     }
     
     func fetchAllLogs(completionHandler:@escaping (([Log]) -> Void)) {
         storageEngine.fetchAllLogs(completionHandler: completionHandler)
+    }
+    func fetchAllLogsFormatted() -> [String] {
+        storageEngine.fetchAllLogsFormatted()
     }
     
 }

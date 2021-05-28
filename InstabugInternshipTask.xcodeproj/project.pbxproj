@@ -119,21 +119,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A3D63EA265E4D28003F40A6 /* CoreDataService */ = {
-			isa = PBXGroup;
-			children = (
-				0A3D63F8265E8B47003F40A6 /* NSManagedObject */,
-			);
-			path = CoreDataService;
-			sourceTree = "<group>";
-		};
 		0A3D63F5265E8957003F40A6 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
-				0A3D63FA265E9173003F40A6 /* StorageEngine.swift */,
-				0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */,
-				0A3D6401265EAE04003F40A6 /* LogModel.swift */,
-				0A3D63EB265E4D3E003F40A6 /* DataController.swift */,
+				0A3D640526605311003F40A6 /* StorageService */,
+				0A3D640626605356003F40A6 /* CoreDataService */,
+				0A3D6407266053F6003F40A6 /* Model */,
 			);
 			path = StorageService;
 			sourceTree = "<group>";
@@ -146,6 +137,32 @@
 				0A3D63F0265E4F82003F40A6 /* LogEntity+CoreDataClass.swift */,
 			);
 			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		0A3D640526605311003F40A6 /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				0A3D63FA265E9173003F40A6 /* StorageEngine.swift */,
+			);
+			path = StorageService;
+			sourceTree = "<group>";
+		};
+		0A3D640626605356003F40A6 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				0A3D63F8265E8B47003F40A6 /* NSManagedObject */,
+				0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */,
+				0A3D63EB265E4D3E003F40A6 /* DataController.swift */,
+			);
+			path = CoreDataService;
+			sourceTree = "<group>";
+		};
+		0A3D6407266053F6003F40A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A3D6401265EAE04003F40A6 /* LogModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B47E3E8C262D7C10007D38E8 = {
@@ -185,11 +202,10 @@
 		B47E3ED3262D7C66007D38E8 /* InstabugLogger */ = {
 			isa = PBXGroup;
 			children = (
-				0A3D63F5265E8957003F40A6 /* StorageService */,
-				0A3D63EA265E4D28003F40A6 /* CoreDataService */,
+				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
 				B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */,
 				B47E3ED5262D7C66007D38E8 /* Info.plist */,
-				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
+				0A3D63F5265E8957003F40A6 /* StorageService */,
 			);
 			path = InstabugLogger;
 			sourceTree = "<group>";

@@ -3,7 +3,8 @@ a logging framework that has an easy interface to log with different levels and 
 
 ## Setup
 --- 
- - [ ] Call  Instabug.shared.Configure( .coreData, limit:1000)
+ - [ ] Import InstabugLogger at app delegate file.
+ - [ ] Call Instabug.shared.Configure( .coreData, limit:1000)
 
 - User configures the max number of logs could be stored at disk.
 - Ulso can use the best storage option at disk like *Core data*

@@ -10,24 +10,22 @@ import XCTest
 
 //(todo): Setup core data stack to run testing operations at the  memory not at the actual storage.
 
-class InstabugLoggerTests: XCTestCase { 
-    
-    var storageService : StorageEngine!
+class InstabugLoggerTests: XCTestCase {
     var level:LogLevel!
     var message:String!
     var logger:InstabugLogger!
 
     override func setUpWithError() throws {
-        storageService = StorageEngine(storageType: .coreData(limit: 1000))
         level = .Error
-        message = "Error occurred because of force unwrapping"
-        logger = InstabugLogger()
+        message = "Error occurred while unwrapping optional."
+            logger = InstabugLogger()
+            logger.configure(storageType: .coreData(limit: 1000, modelName: "LogModel")) 
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is
-        logger.deleteAllLogs()
-        storageService = nil
+        //logger.deleteAllLogs()
+        logger = nil
     }
 
     func test_Log() {
@@ -45,19 +43,19 @@ class InstabugLoggerTests: XCTestCase {
     }
 
     func test_FetchAllLogs() {
-        var logs = storageService.fetchAllLogs()
+        var logs = logger.fetchAllLogs()
         XCTAssertTrue(logs.isEmpty)
         logger.log(level, message: message)
-        logs = storageService.fetchAllLogs()
+        logs = logger.fetchAllLogs()
         XCTAssertEqual(logs.count, 1)
     }
 
     func test_FetchAllLogsWithClosures() {
-        storageService.fetchAllLogs { logs in
+        logger.fetchAllLogs { logs in
             XCTAssertTrue(logs.isEmpty)
         }
         logger.log(level, message: message)
-        storageService.fetchAllLogs { logs in
+        logger.fetchAllLogs { logs in
             XCTAssertEqual(logs.count, 1)
         }
     }
@@ -71,5 +69,5 @@ class InstabugLoggerTests: XCTestCase {
 
         XCTAssertEqual(logsFormatted[0].first,"|" )
         XCTAssertEqual(logsFormatted.count,2 )
-    } 
+    }
 }

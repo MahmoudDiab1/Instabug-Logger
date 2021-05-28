@@ -16,11 +16,9 @@
 		0A3D63F7265E8970003F40A6 /* CoreDataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */; };
 		0A3D63FB265E9173003F40A6 /* StorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63FA265E9173003F40A6 /* StorageEngine.swift */; };
 		0A3D6402265EAE04003F40A6 /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D6401265EAE04003F40A6 /* LogModel.swift */; };
-		0A97E1102661409F0084E57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A97E10F2661409F0084E57F /* LaunchScreen.storyboard */; };
 		B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E98262D7C10007D38E8 /* AppDelegate.swift */; };
 		B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */; };
 		B47E3E9D262D7C10007D38E8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9C262D7C10007D38E8 /* RootViewController.swift */; };
-		B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47E3EA1262D7C11007D38E8 /* Assets.xcassets */; };
 		B47E3EDB262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */; };
 		B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */; };
 		B47E3EE4262D7C66007D38E8 /* InstabugLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,12 +72,10 @@
 		0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEngine.swift; sourceTree = "<group>"; };
 		0A3D63FA265E9173003F40A6 /* StorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageEngine.swift; sourceTree = "<group>"; };
 		0A3D6401265EAE04003F40A6 /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
-		0A97E10F2661409F0084E57F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstabugInternshipTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3E98262D7C10007D38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B47E3E9C262D7C10007D38E8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		B47E3EA1262D7C11007D38E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B47E3EA6262D7C11007D38E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstabugLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstabugLogger.h; sourceTree = "<group>"; };
@@ -156,15 +152,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		0A97E1162661469C0084E57F /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				B47E3EA1262D7C11007D38E8 /* Assets.xcassets */,
-				0A97E10F2661409F0084E57F /* LaunchScreen.storyboard */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		B47E3E8C262D7C10007D38E8 = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +177,6 @@
 			children = (
 				B47E3EA6262D7C11007D38E8 /* Info.plist */,
 				0A97E1152661468F0084E57F /* Core */,
-				0A97E1162661469C0084E57F /* Assets */,
 				B47E3E9C262D7C10007D38E8 /* RootViewController.swift */,
 			);
 			path = InstabugInternshipTask;
@@ -333,8 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A97E1102661409F0084E57F /* LaunchScreen.storyboard in Resources */,
-				B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

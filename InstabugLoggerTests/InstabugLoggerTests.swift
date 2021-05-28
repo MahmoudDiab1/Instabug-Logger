@@ -8,26 +8,68 @@
 import XCTest
 @testable import InstabugLogger
 
-class InstabugLoggerTests: XCTestCase {
+//(todo): Setup core data stack to run testing operations at the  memory not at the actual storage.
+
+class InstabugLoggerTests: XCTestCase { 
+    
+    var storageService : StorageEngine!
+    var level:LogLevel!
+    var message:String!
+    var logger:InstabugLogger!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        storageService = StorageEngine(storageType: .coreData(limit: 1000))
+        level = .Error
+        message = "Error occurred because of force unwrapping"
+        logger = InstabugLogger()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Put teardown code here. This method is
+        logger.deleteAllLogs()
+        storageService = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_Log() {
+        logger.log(level, message: message)
+        XCTAssertEqual(logger.fetchAllLogs().count, 1)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_Log_OverLimit() {
+        for _ in 0..<1000{
+        logger.log(.Warning, message: message)
+        }
+        logger.log(.Debug, message: message)
+        let logs = logger.fetchAllLogs()
+        XCTAssertEqual(logs.first?.level, "Debug")
+    }
+
+    func test_FetchAllLogs() {
+        var logs = storageService.fetchAllLogs()
+        XCTAssertTrue(logs.isEmpty)
+        logger.log(level, message: message)
+        logs = storageService.fetchAllLogs()
+        XCTAssertEqual(logs.count, 1)
+    }
+
+    func test_FetchAllLogsWithClosures() {
+        storageService.fetchAllLogs { logs in
+            XCTAssertTrue(logs.isEmpty)
+        }
+        logger.log(level, message: message)
+        storageService.fetchAllLogs { logs in
+            XCTAssertEqual(logs.count, 1)
         }
     }
 
+    func test_FetchAllLogsFormatted () {
+        var logsFormatted = logger.fetchAllLogsFormatted()
+        XCTAssertTrue(logsFormatted.isEmpty)
+        logger.log(level, message: message)
+        logger.log(level, message: message)
+        logsFormatted = logger.fetchAllLogsFormatted()
+
+        XCTAssertEqual(logsFormatted[0].first,"|" )
+        XCTAssertEqual(logsFormatted.count,2 )
+    } 
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A3D63C2265D7FEC003F40A6 /* InstabugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */; };
-		0A3D63EC265E4D3E003F40A6 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63EB265E4D3E003F40A6 /* DataController.swift */; };
+		0A3D63EC265E4D3E003F40A6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63EB265E4D3E003F40A6 /* CoreDataStack.swift */; };
 		0A3D63EF265E4F3A003F40A6 /* LogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63ED265E4F3A003F40A6 /* LogModel.xcdatamodeld */; };
 		0A3D63F2265E4F82003F40A6 /* LogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63F0265E4F82003F40A6 /* LogEntity+CoreDataClass.swift */; };
 		0A3D63F3265E4F82003F40A6 /* LogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63F1265E4F82003F40A6 /* LogEntity+CoreDataProperties.swift */; };
@@ -16,12 +16,11 @@
 		0A3D63F7265E8970003F40A6 /* CoreDataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */; };
 		0A3D63FB265E9173003F40A6 /* StorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63FA265E9173003F40A6 /* StorageEngine.swift */; };
 		0A3D6402265EAE04003F40A6 /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D6401265EAE04003F40A6 /* LogModel.swift */; };
+		0A97E1102661409F0084E57F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A97E10F2661409F0084E57F /* LaunchScreen.storyboard */; };
 		B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E98262D7C10007D38E8 /* AppDelegate.swift */; };
 		B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */; };
-		B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9C262D7C10007D38E8 /* ViewController.swift */; };
-		B47E3EA0262D7C10007D38E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47E3E9E262D7C10007D38E8 /* Main.storyboard */; };
+		B47E3E9D262D7C10007D38E8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9C262D7C10007D38E8 /* RootViewController.swift */; };
 		B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47E3EA1262D7C11007D38E8 /* Assets.xcassets */; };
-		B47E3EA5262D7C11007D38E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */; };
 		B47E3EDB262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */; };
 		B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */; };
 		B47E3EE4262D7C66007D38E8 /* InstabugLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,20 +67,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A3D63EB265E4D3E003F40A6 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		0A3D63EB265E4D3E003F40A6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		0A3D63EE265E4F3A003F40A6 /* LogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LogModel.xcdatamodel; sourceTree = "<group>"; };
 		0A3D63F0265E4F82003F40A6 /* LogEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0A3D63F1265E4F82003F40A6 /* LogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEngine.swift; sourceTree = "<group>"; };
 		0A3D63FA265E9173003F40A6 /* StorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageEngine.swift; sourceTree = "<group>"; };
 		0A3D6401265EAE04003F40A6 /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
+		0A97E10F2661409F0084E57F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstabugInternshipTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3E98262D7C10007D38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B47E3E9C262D7C10007D38E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B47E3E9F262D7C10007D38E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B47E3E9C262D7C10007D38E8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		B47E3EA1262D7C11007D38E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B47E3EA4262D7C11007D38E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B47E3EA6262D7C11007D38E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstabugLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstabugLogger.h; sourceTree = "<group>"; };
@@ -122,9 +120,10 @@
 		0A3D63F5265E8957003F40A6 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
-				0A3D640526605311003F40A6 /* StorageService */,
-				0A3D640626605356003F40A6 /* CoreDataService */,
-				0A3D6407266053F6003F40A6 /* Model */,
+				0A3D63FA265E9173003F40A6 /* StorageEngine.swift */,
+				0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */,
+				0A3D6401265EAE04003F40A6 /* LogModel.swift */,
+				0A3D640626605356003F40A6 /* CoreDataStack */,
 			);
 			path = StorageService;
 			sourceTree = "<group>";
@@ -139,30 +138,31 @@
 			path = NSManagedObject;
 			sourceTree = "<group>";
 		};
-		0A3D640526605311003F40A6 /* StorageService */ = {
-			isa = PBXGroup;
-			children = (
-				0A3D63FA265E9173003F40A6 /* StorageEngine.swift */,
-			);
-			path = StorageService;
-			sourceTree = "<group>";
-		};
-		0A3D640626605356003F40A6 /* CoreDataService */ = {
+		0A3D640626605356003F40A6 /* CoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
 				0A3D63F8265E8B47003F40A6 /* NSManagedObject */,
-				0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */,
-				0A3D63EB265E4D3E003F40A6 /* DataController.swift */,
+				0A3D63EB265E4D3E003F40A6 /* CoreDataStack.swift */,
 			);
-			path = CoreDataService;
+			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
-		0A3D6407266053F6003F40A6 /* Model */ = {
+		0A97E1152661468F0084E57F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0A3D6401265EAE04003F40A6 /* LogModel.swift */,
+				B47E3E98262D7C10007D38E8 /* AppDelegate.swift */,
+				B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */,
 			);
-			path = Model;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0A97E1162661469C0084E57F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B47E3EA1262D7C11007D38E8 /* Assets.xcassets */,
+				0A97E10F2661409F0084E57F /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		B47E3E8C262D7C10007D38E8 = {
@@ -188,13 +188,10 @@
 		B47E3E97262D7C10007D38E8 /* InstabugInternshipTask */ = {
 			isa = PBXGroup;
 			children = (
-				B47E3E98262D7C10007D38E8 /* AppDelegate.swift */,
-				B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */,
-				B47E3E9C262D7C10007D38E8 /* ViewController.swift */,
-				B47E3E9E262D7C10007D38E8 /* Main.storyboard */,
-				B47E3EA1262D7C11007D38E8 /* Assets.xcassets */,
-				B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */,
 				B47E3EA6262D7C11007D38E8 /* Info.plist */,
+				0A97E1152661468F0084E57F /* Core */,
+				0A97E1162661469C0084E57F /* Assets */,
+				B47E3E9C262D7C10007D38E8 /* RootViewController.swift */,
 			);
 			path = InstabugInternshipTask;
 			sourceTree = "<group>";
@@ -202,9 +199,9 @@
 		B47E3ED3262D7C66007D38E8 /* InstabugLogger */ = {
 			isa = PBXGroup;
 			children = (
-				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
-				B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */,
 				B47E3ED5262D7C66007D38E8 /* Info.plist */,
+				B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */,
+				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
 				0A3D63F5265E8957003F40A6 /* StorageService */,
 			);
 			path = InstabugLogger;
@@ -296,7 +293,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					B47E3E94262D7C10007D38E8 = {
 						CreatedOnToolsVersion = 12.4;
@@ -336,9 +333,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B47E3EA5262D7C11007D38E8 /* LaunchScreen.storyboard in Resources */,
+				0A97E1102661409F0084E57F /* LaunchScreen.storyboard in Resources */,
 				B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */,
-				B47E3EA0262D7C10007D38E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A3D63F4265E5773003F40A6 /* LogModel.xcdatamodeld in Sources */,
-				B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */,
+				B47E3E9D262D7C10007D38E8 /* RootViewController.swift in Sources */,
 				B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */,
 				B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */,
 			);
@@ -378,7 +374,7 @@
 				0A3D6402265EAE04003F40A6 /* LogModel.swift in Sources */,
 				0A3D63F3265E4F82003F40A6 /* LogEntity+CoreDataProperties.swift in Sources */,
 				0A3D63FB265E9173003F40A6 /* StorageEngine.swift in Sources */,
-				0A3D63EC265E4D3E003F40A6 /* DataController.swift in Sources */,
+				0A3D63EC265E4D3E003F40A6 /* CoreDataStack.swift in Sources */,
 				0A3D63EF265E4F3A003F40A6 /* LogModel.xcdatamodeld in Sources */,
 				0A3D63F7265E8970003F40A6 /* CoreDataEngine.swift in Sources */,
 				0A3D63F2265E4F82003F40A6 /* LogEntity+CoreDataClass.swift in Sources */,
@@ -412,25 +408,6 @@
 			targetProxy = B47E3EE5262D7C66007D38E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B47E3E9E262D7C10007D38E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B47E3E9F262D7C10007D38E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B47E3EA4262D7C11007D38E8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B47E3EBD262D7C11007D38E8 /* Debug */ = {
@@ -484,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -539,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -593,7 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -626,7 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -678,7 +655,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InstabugLoggerTests/Info.plist;
+				INFOPLIST_FILE = InstabugLoggerTests/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

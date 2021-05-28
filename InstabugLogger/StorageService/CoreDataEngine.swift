@@ -8,28 +8,34 @@
 import Foundation
 import CoreData
 
+//MARK: Core Data Engine -
+///Responsibility: Abstracted service that accepts core data stack object and the storage limit to handle read/write operations on core data
+
 class CoreDataEngine : StorageHandler  {
     
     // MARK: Properties -
-    private var dataController:DataController!
+    private var coreDataStack:CoreDataStack!
     private var backgroundContext : NSManagedObjectContext!
+    private var viewContext : NSManagedObjectContext
     private var storageCapacity:Int
     
     //MARK: Initializer
-    init(limit:Int, dataController:DataController) {
+    init(limit:Int, coreDataStack:CoreDataStack) {
         self.storageCapacity = limit
-        dataController.loadPersistenceStore()
-        self.dataController  = dataController
-        self.backgroundContext = dataController.backGroundContext
+        self.coreDataStack  = coreDataStack
+        self.backgroundContext = coreDataStack.backGroundContext
+        self.viewContext = coreDataStack.viewContext
     }
     
     // MARK: Configuration -
+    
+    ///Called to destroy then load the persistence store as a basic core data stack configuration and InstabugLogger requirement.
     func configure() {
-        dataController.destroyPersistentStore()
-        dataController.loadPersistenceStore()
+        coreDataStack.destroyPersistentStore()
+        coreDataStack.loadPersistenceStore()
     }
     
-    //MARK: Fetch Logs - 
+    //MARK: Fetch Logs -
     func fetchAllLogs() -> [Log]  {
         return decode(fetchLogs())
     }
@@ -48,29 +54,20 @@ class CoreDataEngine : StorageHandler  {
         return  fetchAllLogs().map{formatLog(logger:$0)}
     }
     
-   private func fetchLogs (count:Int? = nil) -> [LogEntity] {
-        let semafore = DispatchSemaphore(value: 0)
+    private func fetchLogs (count:Int? = nil) -> [LogEntity] {
         var logs = [LogEntity]()
         let request = getFetchRequest()
         request.fetchLimit =  count != nil ? count! : .max
-    backgroundContext.perform  {
+        backgroundContext.performAndWait {
             if let result = try? self.backgroundContext.fetch(request) {
                 logs.append( contentsOf: result)
-            }
-            semafore.signal()
+            } 
         }
-        semafore.wait()
         return logs
     }
     
-    func getFetchRequest() -> NSFetchRequest<LogEntity>{
-        let request : NSFetchRequest <LogEntity> = LogEntity.fetchRequest()
-        let sortDescriptor = NSSortDescriptor (key: "timeStamp", ascending: false)
-        request.sortDescriptors = [sortDescriptor]
-        return request
-    }
     
-    // MARK: Logging -
+    // MARK: Insert Logs -
     
     func log(_ level: LogLevel, message: String) {
         let logItem = LogAdapter(level: level, message: message).adapt() 
@@ -99,15 +96,22 @@ class CoreDataEngine : StorageHandler  {
     }
     
     func deleteAllLogs () {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = LogEntity.fetchRequest()
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        backgroundContext.perform {
-            if let result =  try? self.backgroundContext.executeAndMergeChanges(using: batchDeleteRequest) {
-                debugPrint(result)
-            }
-        }
+        coreDataStack.destroyPersistentStore()
+    }
+ 
+}
+//MARK: CoreDataEngine extension -
+
+extension CoreDataEngine {
+    
+    func getFetchRequest() -> NSFetchRequest<LogEntity>{
+        let request : NSFetchRequest <LogEntity> = LogEntity.fetchRequest()
+        let sortDescriptor = NSSortDescriptor (key: "timeStamp", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        return request
     }
     
+    //Convert from LogEntity model to Log model.
     private func decode (_ logs:[LogEntity]) -> [Log]{
         var result:[Log] = []
         for log in logs {
@@ -116,14 +120,11 @@ class CoreDataEngine : StorageHandler  {
         }
         return result
     }
-}
-
-extension CoreDataEngine {
     
     func formatLog(logger: Log ) -> String {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "y-MM-dd H:m:ss.SSSS"
-      let formattedDate = dateFormatter.string(from: logger.timeStamp)
-        return "\(logger.level.uppercased()): \(formattedDate)    \(logger.message)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "y-MM-dd H:m:ss.SSSS"
+        let formattedDate = dateFormatter.string(from: logger.timeStamp)
+        return "| \(logger.level.uppercased()): \(formattedDate)   \(logger.message) |"
     }
 }

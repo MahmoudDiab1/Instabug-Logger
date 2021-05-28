@@ -7,12 +7,13 @@
 
 import Foundation
 
-//MARK: LogInput and formated Log model.Log models -
-
+//MARK: Log models -
+//User input data
 struct LogInput {
     let level: LogLevel
     let message: String
 }
+//Adapted model.
 public struct Log  {
     let level: String
     let message: String
@@ -22,23 +23,21 @@ public struct Log  {
 
 //MARK: Log level type -
 public enum LogLevel : String {
-    case Alert         = "Alert"
     case Error         = "Error"
     case Debug         = "Debug"
-    case Notice        = "Notice"
     case Warning       = "Warning"
     case Critical      = "Critical"
-    case Emergency     = "Emergency"
-    case Informational = "Informational"
 }
 
-//MARK: Adapt user LogInput to a formatted Log model. -
 protocol LogTarget {
     var level: String {get}
     var message: String {get}
     var timeStamp: Date {get}
 }
 
+//MARK: LogAdapter -
+/// Responsibility: Log adapter is a middleware to adapt, formate and convert user input to a formatted Log model.
+//  Operations: Validate user Message - AdaptLogModel.
 class LogAdapter {
     private let logItem : LogInput
     init(level:LogLevel, message:String) {
@@ -46,7 +45,7 @@ class LogAdapter {
         self.logItem = logInput
     }
 }
-
+//MARK: Log Adapter extension -
 extension LogAdapter : LogTarget{
     var level: String {
         let errorLevel = logItem.level.rawValue
@@ -60,7 +59,6 @@ extension LogAdapter : LogTarget{
     var timeStamp: Date {
         return Date()
     }
-    
     
     private func validateMessage(msg:String)->String {
         let validMessage = msg.count > 1000 ? String(msg.prefix(1000)).appending("...") : msg

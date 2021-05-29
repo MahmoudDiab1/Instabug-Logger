@@ -15,7 +15,16 @@ import Foundation
 
 public enum StorageType {
     /// (todo): Add different storage options.
-    case coreData (limit:Int)
+    case coreData
+}
+
+public struct StorageConfiguration{
+      var  storageType:StorageType
+      var limit:Int
+    public init(storageType:StorageType, limit:Int) {
+        self.storageType = storageType
+        self.limit = limit
+    }
 }
 
 //MARK: - Storage Handler -
@@ -39,13 +48,13 @@ class StorageEngine {
     // Composing CoreDataEngine dependency
     private var coreDataEngine:CoreDataEngine
     
-    init(storageType:StorageType) {
-        self.storageType = storageType
+    init(configuration:StorageConfiguration) {
+        self.storageType = configuration.storageType
         
         switch storageType {
-        case .coreData(limit: let limit):
+        case .coreData :
             let modelName = "LogModel" 
-            coreDataEngine = CoreDataEngine(limit: limit, coreDataStack:  CoreDataStack(modelName: modelName))
+            coreDataEngine = CoreDataEngine(limit: configuration.limit, coreDataStack:  CoreDataStack(modelName: modelName))
         }
     }
 }

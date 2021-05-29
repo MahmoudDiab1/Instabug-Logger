@@ -13,12 +13,8 @@ public class InstabugLogger  {
     //MARK: - Properties -
     
     public static var shared : InstabugLogger = InstabugLogger()
-    
-    private var storageType:StorageType? 
-    lazy  var storageService : StorageHandler = {
-        let service = StorageEngine(storageType: storageType ?? .coreData(limit: 1000))
-        return service
-    }()
+     
+    var storageService : StorageEngine!
     
     //MARK: - Configuration -
     
@@ -27,16 +23,31 @@ public class InstabugLogger  {
     /// Called at app didFinishLaunchingWithOptions function every time the app launches.
     ///
     /// `Parameters`
-    /// support users by a fancy way to choose the storage option eg. Core data also the max
-    /// number of logs as a storage  limit.
+    /// support users by a fancy way to configure InstabugLogger by the storage option like Core data and the max number of Logs to be stored
+    /// number of logs as a storage  limit through the input: configurations: StorageConfiguration.
+    ///
+    /// `Configure` function  parameter is an`Optional` parameter with default a value
+    /// Default a value for configurations is (storageType: .coreData, limit: 1000)
+    /// Note: Different storage options to be implemented beside core data like files.
+    /// 
     /// It cleans the  disk store on every app launch.
     ///
-    /// `Example of call`
+    /// `Example `
+    /// let configurations = StorageConfiguration(storageType: .coreData, limit:1000)
+    /// InstabugLogger.shared.configure (configurations: configurations)
+    ///
     /// InstabugLogger.shared.configure(storageType: .coreData (limit: 1000) )
     
-    public func configure (storageType:StorageType) {
-        self.storageType = storageType
-        storageService.configure() // Based on storage type e.g. CoreData.
+    public func configure (configurations: StorageConfiguration? = nil) {
+    
+        let defaultConfig = StorageConfiguration(storageType: .coreData,
+                                                limit: 1000)
+        
+        self.storageService = StorageEngine(configuration: configurations ?? defaultConfig)
+        if let storageService = self.storageService {
+            storageService.configure() // Based on storage type e.g. CoreData.
+        }
+        
     }
     
     // MARK: - Logging -

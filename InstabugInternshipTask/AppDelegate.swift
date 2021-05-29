@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // Configure InstabugLogger
-        let discLimit = 1000
-        InstabugLogger.shared.configure(storageType: .coreData(limit: discLimit))
+        let configurations = StorageConfiguration(storageType: .coreData, limit:1000)
+        InstabugLogger.shared.configure(configurations: configurations)
         
         return true
     }

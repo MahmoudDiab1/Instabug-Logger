@@ -48,7 +48,7 @@ class CoreDataStack {
     }
     
     func destroyPersistentStore() {
-        try! persistenceContainer.persistentStoreCoordinator.destroyPersistentStore(at: url, ofType: storeType, options: nil)
+        try? persistenceContainer.persistentStoreCoordinator.destroyPersistentStore(at: url, ofType: storeType, options: nil)
     }
 }
 

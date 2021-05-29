@@ -19,7 +19,7 @@ class InstabugLoggerTests: XCTestCase {
         level = .Error
         message = "Error occurred while unwrapping optional."
             logger = InstabugLogger()
-            logger.configure(storageType: .coreData(limit: 1000, modelName: "LogModel")) 
+            logger.configure(storageType: .coreData(limit: 1000)) 
     }
 
     override func tearDownWithError() throws {

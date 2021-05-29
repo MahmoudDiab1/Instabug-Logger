@@ -87,7 +87,7 @@ class CoreDataEngine : StorageHandler  {
     
     //MARK: Delete logs -
     func deleteLog(logToDelete:LogEntity) {
-        backgroundContext.perform {
+        backgroundContext.performAndWait  {
             self.backgroundContext.delete(logToDelete)
             if let result = try? self.backgroundContext.saveIfNeeded() {
                 debugPrint(result)

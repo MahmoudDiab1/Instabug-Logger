@@ -15,7 +15,7 @@ import Foundation
 
 public enum StorageType {
     /// (todo): Add different storage options.
-    case coreData (limit:Int,modelName:String = "LogModel")
+    case coreData (limit:Int)
 }
 
 //MARK: - Storage Handler -
@@ -34,14 +34,17 @@ protocol StorageHandler {
 /// Responsibility: Composing  different types of storage services like CoreDataEngine.
 
 class StorageEngine {
+
     private var storageType:StorageType
     // Composing CoreDataEngine dependency
     private var coreDataEngine:CoreDataEngine
     
     init(storageType:StorageType) {
         self.storageType = storageType
+        
         switch storageType {
-        case .coreData(limit: let limit,let modelName):
+        case .coreData(limit: let limit):
+            let modelName = "LogModel" 
             coreDataEngine = CoreDataEngine(limit: limit, coreDataStack:  CoreDataStack(modelName: modelName))
         }
     }

@@ -16,10 +16,9 @@
 		0A3D63F7265E8970003F40A6 /* CoreDataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */; };
 		0A3D63FB265E9173003F40A6 /* StorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D63FA265E9173003F40A6 /* StorageEngine.swift */; };
 		0A3D6402265EAE04003F40A6 /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D6401265EAE04003F40A6 /* LogModel.swift */; };
-		0A97E16C266190930084E57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97E16B266190930084E57F /* AppDelegate.swift */; };
-		0A97E16E266190B70084E57F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97E16D266190B70084E57F /* SceneDelegate.swift */; };
-		0A97E170266190FF0084E57F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97E16F266190FF0084E57F /* RootViewController.swift */; };
-		0A97E1722661915B0084E57F /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A97E1712661915B0084E57F /* info.plist */; };
+		0A97E1AD2661B1EB0084E57F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97E1AC2661B1EB0084E57F /* AppDelegate.swift */; };
+		0A97E1AF2661B2200084E57F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97E1AE2661B2200084E57F /* SceneDelegate.swift */; };
+		0A97E1B52661B2C70084E57F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97E1B42661B2C70084E57F /* RootViewController.swift */; };
 		B47E3EDB262D7C66007D38E8 /* InstabugLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */; };
 		B47E3EE2262D7C66007D38E8 /* InstabugLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3EE1262D7C66007D38E8 /* InstabugLoggerTests.swift */; };
 		B47E3EE4262D7C66007D38E8 /* InstabugLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,10 +72,10 @@
 		0A3D63F6265E8970003F40A6 /* CoreDataEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEngine.swift; sourceTree = "<group>"; };
 		0A3D63FA265E9173003F40A6 /* StorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageEngine.swift; sourceTree = "<group>"; };
 		0A3D6401265EAE04003F40A6 /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
-		0A97E16B266190930084E57F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A97E16D266190B70084E57F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A97E16F266190FF0084E57F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		0A97E1712661915B0084E57F /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		0A97E1AC2661B1EB0084E57F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A97E1AE2661B2200084E57F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0A97E1B42661B2C70084E57F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../RootViewController.swift; sourceTree = "<group>"; };
+		0A97E1CC2661B7B30084E57F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstabugInternshipTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3ED2262D7C66007D38E8 /* InstabugLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstabugLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstabugLogger.h; sourceTree = "<group>"; };
@@ -144,19 +143,21 @@
 			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
-		0A97E1152661468F0084E57F /* Core */ = {
+		0A97E1AB2661B1B30084E57F /* InstabugInternshipTask */ = {
 			isa = PBXGroup;
 			children = (
-				0A97E16D266190B70084E57F /* SceneDelegate.swift */,
-				0A97E16B266190930084E57F /* AppDelegate.swift */,
+				0A97E1CC2661B7B30084E57F /* Info.plist */,
+				0A97E1AE2661B2200084E57F /* SceneDelegate.swift */,
+				0A97E1AC2661B1EB0084E57F /* AppDelegate.swift */,
+				0A97E1B42661B2C70084E57F /* RootViewController.swift */,
 			);
-			path = Core;
+			path = InstabugInternshipTask;
 			sourceTree = "<group>";
 		};
 		B47E3E8C262D7C10007D38E8 = {
 			isa = PBXGroup;
 			children = (
-				B47E3E97262D7C10007D38E8 /* InstabugInternshipTask */,
+				0A97E1AB2661B1B30084E57F /* InstabugInternshipTask */,
 				B47E3ED3262D7C66007D38E8 /* InstabugLogger */,
 				B47E3EE0262D7C66007D38E8 /* InstabugLoggerTests */,
 				B47E3E96262D7C10007D38E8 /* Products */,
@@ -171,16 +172,6 @@
 				B47E3EDA262D7C66007D38E8 /* InstabugLoggerTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B47E3E97262D7C10007D38E8 /* InstabugInternshipTask */ = {
-			isa = PBXGroup;
-			children = (
-				0A97E1152661468F0084E57F /* Core */,
-				0A97E16F266190FF0084E57F /* RootViewController.swift */,
-				0A97E1712661915B0084E57F /* info.plist */,
-			);
-			path = InstabugInternshipTask;
 			sourceTree = "<group>";
 		};
 		B47E3ED3262D7C66007D38E8 /* InstabugLogger */ = {
@@ -320,7 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A97E1722661915B0084E57F /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A97E170266190FF0084E57F /* RootViewController.swift in Sources */,
+				0A97E1B52661B2C70084E57F /* RootViewController.swift in Sources */,
+				0A97E1AD2661B1EB0084E57F /* AppDelegate.swift in Sources */,
+				0A97E1AF2661B2200084E57F /* SceneDelegate.swift in Sources */,
 				0A3D63F4265E5773003F40A6 /* LogModel.xcdatamodeld in Sources */,
-				0A97E16C266190930084E57F /* AppDelegate.swift in Sources */,
-				0A97E16E266190B70084E57F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LRL7945AMX;
+				DEVELOPMENT_TEAM = FHRM3TS3PP;
 				INFOPLIST_FILE = InstabugInternshipTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LRL7945AMX;
+				DEVELOPMENT_TEAM = FHRM3TS3PP;
 				INFOPLIST_FILE = InstabugInternshipTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

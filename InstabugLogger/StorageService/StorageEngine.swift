@@ -16,8 +16,12 @@ public enum StorageType {
     case coreData
 }
 
+public enum DeletionType {
+    case allLogs
+    case someOfLogs (number:UInt)
+}
 
-//MARK:- Storage Configuration -
+//MARK: Storage Configuration -
 ///Custom configuration module to configure the storage option and limit.
 
 public struct StorageConfiguration{
@@ -29,7 +33,8 @@ public struct StorageConfiguration{
     }
 }
 
-//MARK: - Storage Handler -
+
+//MARK: Storage Handler -
 /// Storage Handler protocol abstracts the storage read / write operations.
 
 protocol StorageHandler {
@@ -38,10 +43,11 @@ protocol StorageHandler {
     func fetchAllLogs() -> [Log]
     func fetchAllLogs(completionHandler: @escaping (([Log]) -> Void))
     func fetchAllLogsFormatted () ->[String]
-    func deleteAllLogs()
+    func freeSpace(numberOfLogs:DeletionType) 
 }
 
-//MARK: - Storage Engine -
+
+//MARK: Storage Engine -
 /// StorageEngine  handles storage (read / write) operations based on storage type.
 
 class StorageEngine {
@@ -76,8 +82,7 @@ extension StorageEngine : StorageHandler {
     func fetchAllLogsFormatted() -> [String] {
         return  storageHandler.fetchAllLogsFormatted()
     }
-    
-    func deleteAllLogs() {
-        storageHandler.deleteAllLogs()
+    func freeSpace(numberOfLogs:DeletionType) {
+        storageHandler.freeSpace(numberOfLogs:numberOfLogs)
     }
 }

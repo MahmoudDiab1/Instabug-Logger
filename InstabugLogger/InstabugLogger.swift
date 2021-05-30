@@ -10,7 +10,7 @@ import CoreData
 
 public class InstabugLogger  {
     
-    //MARK: - Properties -
+    //MARK: Properties -
     
     public static let shared: InstabugLogger = {
         let instance = InstabugLogger()
@@ -20,25 +20,28 @@ public class InstabugLogger  {
     private var storageService : StorageEngine!
     private let defaultStorageOption:StorageType = .coreData
     private let defaultStorageLimit = 1000
-    
+    private var customConfiguration:StorageConfiguration!
     private var defaultConfig : StorageConfiguration {
         let configuration  = StorageConfiguration(storageType: .coreData,
                                                   limit:defaultStorageLimit )
         return configuration
     }
     
-    //MARK: - Configuration -
+    
+    
+    
+    //MARK: Configuration -
     
     ///`Configure` function responsible for the basic configuration of InstabugLogger
     /// framework.
     /// Called at app didFinishLaunchingWithOptions function every time the app launches.
     ///
-    /// `Parameters`
+    /// - Parameter configurations: configuration object contains storage type and max storage limit
     /// support users by a fancy way to configure InstabugLogger by the storage option like Core data and the max number of Logs to be stored
     /// number of logs as a storage  limit through the input: configurations: StorageConfiguration.
     ///
     /// - `Configure` function  parameter is an`Optional` parameter.
-    /// - Default  value for configurations is (storageType: .coreData, limit: 1000)
+    /// - Default  value for configurations is    (storageType: .coreData, limit: 1000)
     /// - Note: Different storage options to be implemented beside core data like files.
     /// - It cleans the  disk store on every app launch.
     ///
@@ -52,13 +55,15 @@ public class InstabugLogger  {
     public func configure (configurations: StorageConfiguration? = nil) { 
         self.storageService = StorageEngine(configuration: configurations ?? defaultConfig)
         if let storageService = self.storageService {
+            self.customConfiguration = configurations
             storageService.configure() // Based on storage type e.g. CoreData.
         }
-        
     }
     
-    // MARK: - Logging -
     
+    
+    
+    // MARK:  Logging -
     /// `log` function responsible for  storing each log with it's level and timestamp.
     /// insertion occurred  on disk e.g. CoreData based on user configuration.
     ///
@@ -73,7 +78,9 @@ public class InstabugLogger  {
     }
     
     
-    // MARK: - Fetch logs  -
+    
+    
+    // MARK:  Fetch logs  -
     
     /// ``Fetching Functions `` responsible for reading logs from disk and return it to user.
     /// User have three options to retrieve all logs either formatted or as an array of Log model.
@@ -96,10 +103,13 @@ public class InstabugLogger  {
         return logs
     }
     
-    // MARK: - Delete logs  -
+    
+    
+    
+    // MARK: Delete logs  -
     
     /// `deleteAllLogs`  function responsible for destroying logs from disk.
-    public func deleteAllLogs() {
-        storageService.deleteAllLogs()
+    public func deleteLogs(logs: DeletionType) {
+        storageService.freeSpace(numberOfLogs: logs)
     }
 }

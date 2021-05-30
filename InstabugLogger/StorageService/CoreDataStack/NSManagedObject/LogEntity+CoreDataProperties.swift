@@ -16,9 +16,9 @@ extension LogEntity {
         return NSFetchRequest<LogEntity>(entityName: "LogEntity")
     }
 
-    @NSManaged public var message: String?
-    @NSManaged public var timeStamp: Date?
-    @NSManaged public var level: String?
+    @NSManaged public var message: String
+    @NSManaged public var timeStamp: Date
+    @NSManaged public var level: String
 
 }
 

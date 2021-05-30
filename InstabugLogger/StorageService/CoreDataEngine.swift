@@ -17,59 +17,63 @@ class CoreDataEngine : StorageHandler  {
     private var coreDataStack:CoreDataStack!
     private var backgroundContext : NSManagedObjectContext!
     private var viewContext : NSManagedObjectContext
-    private var storageCapacity:Int
+    private var storageLimit:Int
+   
+    /// The default number of logs to free if reaching the max storage limit.
+    /// passing it as a parameter during log insertion is an option to be implemented.
+    private var logsToFree : UInt = 1
     
-    //MARK: - Initializer -
+    
+    // MARK: Initializer -
     init(limit:Int, coreDataStack:CoreDataStack) {
-        self.storageCapacity = limit
+        self.storageLimit = limit
         self.coreDataStack  = coreDataStack
         self.backgroundContext = coreDataStack.backGroundContext
         self.viewContext = coreDataStack.viewContext
     }
     
     
-    // MARK: - Insert Log -
-    
+    // MARK: Insert Log -
     func log(_ level: LogLevel, message: String) {
+        if fetchLogs().count >= storageLimit {
+            self.freeSpace(numberOfLogs: .someOfLogs(number:  logsToFree ))
+        }
         let logItem = LogAdapter(level: level, message: message).adapt()
         let log = LogEntity(context:backgroundContext)
         log.message = logItem.message
         log.level = logItem.level
         log.timeStamp = logItem.timeStamp
-        let logs = self.fetchLogs()
-        if logs.count>storageCapacity { self.deleteLog(logToDelete: logs.last!) }
-        
-        backgroundContext.performAndWait {
-            if let result =   try? self.backgroundContext.saveIfNeeded(){
-                debugPrint(result.description)
-            }
-        }
+        backgroundContext.saveIfNeeded()
     }
     
-    // MARK: - Configuration -
-    
-    ///Called to destroy then load the persistence store as a basic core data stack configuration and InstabugLogger requirement.
+    // MARK: Configuration -
+    /// Called to destroy & load the persistence store as a basic configuration.
     func configure() {
         coreDataStack.destroyPersistentStore()
         coreDataStack.loadPersistenceStore()
     }
-    
-    //MARK: - Fetch Logs -
-    
+}
+
+
+//MARK: Fetching Logs -
+extension CoreDataEngine {
     func fetchAllLogs() -> [Log]  {
-        return decode(fetchLogs())
+        let decodedLogs = fetchLogs()
+        return decode(decodedLogs)
     }
     
     func fetchAllLogs(completionHandler:@escaping (([Log]) -> Void)) {
         let request = self.getFetchRequest()
         if let result = try?
             self.backgroundContext.fetch(request) {
-            completionHandler(self.decode(result))
+            let decodedLogs = self.decode(result)
+            completionHandler(decodedLogs)
         }
     }
     
     func fetchAllLogsFormatted() -> [String] {
-        return  fetchAllLogs().map{formatLog(logger:$0)}
+        let formattedLogs = fetchLogs().map{formatLog(logger:$0)}
+        return formattedLogs
     }
     
     private func fetchLogs (count:Int? = nil) -> [LogEntity] {
@@ -84,47 +88,68 @@ class CoreDataEngine : StorageHandler  {
         return logs
     }
     
+    private func getFetchRequest() -> NSFetchRequest<LogEntity>{
+        let request : NSFetchRequest <LogEntity> = LogEntity.fetchRequest()
+        let sortDescriptor = NSSortDescriptor (key: "timeStamp", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        return request
+    }
+}
+
+
+//MARK: - Delete logs -
+
+extension CoreDataEngine {
+    func deleteAllLogs () {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "LogEntity")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        let persistentStoreCoordinator = coreDataStack.persistenceContainer.persistentStoreCoordinator
+        backgroundContext.performAndWait {
+            _ = try? persistentStoreCoordinator.execute(deleteRequest, with: backgroundContext)
+        }
+    }
     
-    //MARK: - Delete logs -
-    
-    func deleteLog(logToDelete:LogEntity) {
-        backgroundContext.performAndWait  {
-            self.backgroundContext.delete(logToDelete)
-            if let result = try? self.backgroundContext.saveIfNeeded() {
-                debugPrint(result)
+    func freeSpace(numberOfLogs: DeletionType) {
+        switch numberOfLogs {
+        case .allLogs:
+            deleteAllLogs ()
+        case .someOfLogs(number: let number):
+            if number >= storageLimit {
+                deleteAllLogs()
+            } else {
+                deleteLogs(number: number)
             }
         }
     }
     
-    func deleteAllLogs () {
-        coreDataStack.destroyPersistentStore()
+    private func deleteLogs (logs:[LogEntity]) {
+        _ = logs.map { self.backgroundContext.delete($0)}
+        self.backgroundContext.saveIfNeeded()
     }
     
+    private func deleteLogs (number:UInt) {
+        guard number != 0 else {return}
+        let logsToDelete = fetchLogs(count: Int( number))
+        deleteLogs(logs: logsToDelete)
+    }
 }
-//MARK: CoreDataEngine extension -
 
-extension CoreDataEngine { 
-    func getFetchRequest() -> NSFetchRequest<LogEntity>{
-        let request : NSFetchRequest <LogEntity> = LogEntity.fetchRequest()
-        let sortDescriptor = NSSortDescriptor (key: "timeStamp", ascending: false)
-        request.sortDescriptors = [sortDescriptor]
-        return request
-    }
-    
+//MARK: Format logs  -
+extension CoreDataEngine {
     //Convert from LogEntity model to Log model.
     private func decode (_ logs:[LogEntity]) -> [Log]{
         var result:[Log] = []
         for log in logs {
-            let decodedLog = Log(level: log.level ?? "", message: log.message ?? "", timeStamp: log.timeStamp ?? Date())
+            let decodedLog = Log(level: log.level , message: log.message , timeStamp: log.timeStamp )
             result.append(decodedLog)
         }
         return result
     }
     
-    func formatLog(logger: Log ) -> String {
+    func formatLog(logger: LogEntity ) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "y-MM-dd H:m:ss.SSSS"
-        let formattedDate = dateFormatter.string(from: logger.timeStamp)
+        let formattedDate = dateFormatter.string(from: logger.timeStamp )
         return "| \(logger.level.uppercased()): \(formattedDate)   \(logger.message) |"
     }
 }

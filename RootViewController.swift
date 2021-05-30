@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import InstabugLogger
 
 class RootViewController: UIViewController {
 

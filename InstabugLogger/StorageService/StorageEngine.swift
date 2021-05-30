@@ -5,22 +5,24 @@
 //  Created by mahmoud diab on 26/05/21.
 //
 
-import Foundation
+import Foundation  
 
-
-
-//MARK: - Storage Types -
-/// Storage Types are  storage  options to store user logs at disc..
-/// User can select one of them as a basic configuration .
+//MARK:- Storage Types -
+/// Storage Type contains  storage  options to store logs locally at disk.
+/// User can select one of them as a custom configuration .
 
 public enum StorageType {
     /// (todo): Add different storage options.
     case coreData
 }
 
+
+//MARK:- Storage Configuration -
+///Custom configuration module to configure the storage option and limit.
+
 public struct StorageConfiguration{
-      var  storageType:StorageType
-      var limit:Int
+    var  storageType:StorageType
+    var limit:Int
     public init(storageType:StorageType, limit:Int) {
         self.storageType = storageType
         self.limit = limit
@@ -29,6 +31,7 @@ public struct StorageConfiguration{
 
 //MARK: - Storage Handler -
 /// Storage Handler protocol abstracts the storage read / write operations.
+
 protocol StorageHandler {
     func configure()
     func log(_ level: LogLevel, message: String)
@@ -38,68 +41,43 @@ protocol StorageHandler {
     func deleteAllLogs()
 }
 
-//MARK: Storage Engine -
-/// StorageEngine  handles storage (read / write) operations.
-/// Responsibility: Composing  different types of storage services like CoreDataEngine.
+//MARK: - Storage Engine -
+/// StorageEngine  handles storage (read / write) operations based on storage type.
 
 class StorageEngine {
-
-    private var storageType:StorageType
-    // Composing CoreDataEngine dependency
-    private var coreDataEngine:CoreDataEngine
-    
+    private var storageHandler:StorageHandler
     init(configuration:StorageConfiguration) {
-        self.storageType = configuration.storageType
-        
-        switch storageType {
-        case .coreData :
-            let modelName = "LogModel" 
-            coreDataEngine = CoreDataEngine(limit: configuration.limit, coreDataStack:  CoreDataStack(modelName: modelName))
+        switch configuration.storageType {
+        case .coreData:
+            storageHandler = CoreDataEngine(limit: configuration.limit, coreDataStack:  CoreDataStack(modelName: "LogModel"))
         }
     }
 }
 
 //MARK: Storage Engine extension -
 extension StorageEngine : StorageHandler {
+    
     func configure() {
-        switch storageType {
-        case .coreData :
-            coreDataEngine.configure()
-        }
+        storageHandler.configure()
     }
     
     func log(_ level: LogLevel, message: String) {
-        switch storageType {
-        case .coreData :
-            coreDataEngine.log(level , message: message)
-        }
+        storageHandler.log(level , message: message)
     }
     
     func fetchAllLogs() -> [Log]    {
-        switch storageType {
-        case .coreData :
-            return  coreDataEngine.fetchAllLogs()
-        }
+        return  storageHandler.fetchAllLogs()
     }
     
     func fetchAllLogs(completionHandler:@escaping (([Log]) -> Void)) {
-        switch storageType {
-        case .coreData :
-            coreDataEngine.fetchAllLogs(completionHandler: completionHandler)
-        }
+        storageHandler.fetchAllLogs(completionHandler: completionHandler)
     }
     
     func fetchAllLogsFormatted() -> [String] {
-        switch storageType {
-        case .coreData :
-            return  coreDataEngine.fetchAllLogsFormatted()
-        }
+        return  storageHandler.fetchAllLogsFormatted()
     }
     
     func deleteAllLogs() {
-        switch storageType {
-        case .coreData :
-            coreDataEngine.deleteAllLogs()
-        }
+        storageHandler.deleteAllLogs()
     }
 }

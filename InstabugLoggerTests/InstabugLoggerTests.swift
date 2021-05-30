@@ -65,10 +65,7 @@ class InstabugLoggerTests: XCTestCase {
         var logsFormatted = logger.fetchAllLogsFormatted()
         XCTAssertTrue(logsFormatted.isEmpty)
         logger.log(level, message: message)
-        logger.log(level, message: message)
-        logsFormatted = logger.fetchAllLogsFormatted()
-
+        logsFormatted = logger.fetchAllLogsFormatted() 
         XCTAssertEqual(logsFormatted[0].first,"|" )
-        XCTAssertEqual(logsFormatted.count,2 )
     }
 }

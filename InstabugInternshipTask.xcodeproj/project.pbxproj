@@ -147,11 +147,19 @@
 			isa = PBXGroup;
 			children = (
 				0A97E1CC2661B7B30084E57F /* Info.plist */,
-				0A97E1AE2661B2200084E57F /* SceneDelegate.swift */,
-				0A97E1AC2661B1EB0084E57F /* AppDelegate.swift */,
+				0ACD904C2663BD7C00AED07D /* Core */,
 				0A97E1B42661B2C70084E57F /* RootViewController.swift */,
 			);
 			path = InstabugInternshipTask;
+			sourceTree = "<group>";
+		};
+		0ACD904C2663BD7C00AED07D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0A97E1AE2661B2200084E57F /* SceneDelegate.swift */,
+				0A97E1AC2661B1EB0084E57F /* AppDelegate.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		B47E3E8C262D7C10007D38E8 = {

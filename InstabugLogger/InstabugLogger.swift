@@ -12,9 +12,20 @@ public class InstabugLogger  {
     
     //MARK: - Properties -
     
-    public static var shared : InstabugLogger = InstabugLogger()
-     
-    var storageService : StorageEngine!
+    public static let shared: InstabugLogger = {
+        let instance = InstabugLogger()
+        return instance
+    }()
+    
+    private var storageService : StorageEngine!
+    private let defaultStorageOption:StorageType = .coreData
+    private let defaultStorageLimit = 1000
+    
+    private var defaultConfig : StorageConfiguration {
+        let configuration  = StorageConfiguration(storageType: .coreData,
+                                                  limit:defaultStorageLimit )
+        return configuration
+    }
     
     //MARK: - Configuration -
     
@@ -26,23 +37,19 @@ public class InstabugLogger  {
     /// support users by a fancy way to configure InstabugLogger by the storage option like Core data and the max number of Logs to be stored
     /// number of logs as a storage  limit through the input: configurations: StorageConfiguration.
     ///
-    /// `Configure` function  parameter is an`Optional` parameter with default a value
-    /// Default a value for configurations is (storageType: .coreData, limit: 1000)
-    /// Note: Different storage options to be implemented beside core data like files.
-    /// 
-    /// It cleans the  disk store on every app launch.
+    /// - `Configure` function  parameter is an`Optional` parameter.
+    /// - Default  value for configurations is (storageType: .coreData, limit: 1000)
+    /// - Note: Different storage options to be implemented beside core data like files.
+    /// - It cleans the  disk store on every app launch.
     ///
-    /// `Example `
-    /// let configurations = StorageConfiguration(storageType: .coreData, limit:1000)
+    /// `Custom configuration`
+    /// let configurations = StorageConfiguration(storageType: .coreData, limit:1500)
     /// InstabugLogger.shared.configure (configurations: configurations)
     ///
-    /// InstabugLogger.shared.configure(storageType: .coreData (limit: 1000) )
+    //// `Default configuration`
+    /// InstabugLogger.shared.configure ( )
     
-    public func configure (configurations: StorageConfiguration? = nil) {
-    
-        let defaultConfig = StorageConfiguration(storageType: .coreData,
-                                                limit: 1000)
-        
+    public func configure (configurations: StorageConfiguration? = nil) { 
         self.storageService = StorageEngine(configuration: configurations ?? defaultConfig)
         if let storageService = self.storageService {
             storageService.configure() // Based on storage type e.g. CoreData.
@@ -70,7 +77,9 @@ public class InstabugLogger  {
     
     /// ``Fetching Functions `` responsible for reading logs from disk and return it to user.
     /// User have three options to retrieve all logs either formatted or as an array of Log model.
-    ///`Formatted error message `
+    ///
+    /// Use fetchAllLogsFormatted function to return formatted logs.
+    /// Example of `Formatted error message `
     /// | ERROR: 2021-05-28 20:41:23.3620   SIGSEGV  Segmentation Fault occurred |
     
     public func fetchAllLogs() ->  [Log]  {

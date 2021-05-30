@@ -15,9 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
         
-        // Configure InstabugLogger
-        let configurations = StorageConfiguration(storageType: .coreData, limit:1000)
-        InstabugLogger.shared.configure(configurations: configurations)
+        // MARK:- Configure InstabugLogger -
+        
+        /// Custom configuration
+        ///
+        /// let customConfigurations = StorageConfiguration(storageType: .coreData, limit: 2500)
+        /// InstabugLogger.shared.configure(configurations: customConfigurations)
+        
+        
+        /// Default configuration
+        InstabugLogger.shared.configure()
         
         return true
     }
